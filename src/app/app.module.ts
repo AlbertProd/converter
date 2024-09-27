@@ -1,20 +1,22 @@
+import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { BrowserModule, provideClientHydration } from '@angular/platform-browser';
+import { HttpClientModule } from '@angular/common/http'; // Добавлено
+import { FormsModule } from '@angular/forms'; // Добавлено
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { ConverterComponent } from './components/converter/converter.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    ConverterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    HttpClientModule, // Добавлено
+    FormsModule // Добавлено
   ],
-  providers: [
-    provideClientHydration()
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
